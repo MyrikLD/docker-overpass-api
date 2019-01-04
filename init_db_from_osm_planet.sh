@@ -23,7 +23,10 @@ if [ ! -e $DBDIR/nodes.bin ]; then
 	#Get actual last replication state
 	wget -O /dev/shm/state.txt "$REPLICATE_SERVER/state.txt"
 	
-	init_planet
+	for i in "${PLANET_FILES[@]}"; do   # The quotes are necessary here
+	    PLANET_FILE=$i
+	    init_planet
+	done
 
 	#Get 7 days of backwards history; we never know when was the planet.osm exported..
 	NUM=`cat /dev/shm/state.txt | grep sequenceNumber | cut -d'=' -f2`
