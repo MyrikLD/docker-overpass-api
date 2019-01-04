@@ -5,7 +5,7 @@
 #===================================
 
 #Where to store the database (without using a docker volume) in your server:
-OVERPASS_DB_DIR=/mnt/ssd/overpass_DB
+OVERPASS_DB_DIR=/overpass_data
 
 #On which server TCP port the API should be available ?
 # i.e., the API will be accessible on http://YOUR_SERVER_IP:[PORT]/api
