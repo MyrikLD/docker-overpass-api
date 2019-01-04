@@ -33,7 +33,10 @@ REPLICATE_SERVER=http://planet.osm.org/replication/minute
 
 #Planet file for zurich, switzerland, in case you want to have a small before before exporting the whole Earth.
 #PLANET_FILE="https://s3.amazonaws.com/metro-extracts.mapzen.com/zurich_switzerland.osm.bz2"
-PLANET_FILE="http://download.geofabrik.de/russia-latest.osm.bz2"
+PLANET_FILES=(
+"http://download.geofabrik.de/russia-latest.osm.bz2" 
+"http://download.geofabrik.de/europe/belarus-latest.osm.bz2"
+)
 
 
 
