@@ -3,7 +3,7 @@ MAINTAINER Frank Villaro-Dixon <docker-overpass-api@vi-di.fr>
 
 RUN apt-get update #
 
-RUN apt-get install -y apache2 vim
+RUN apt-get install -y apache2 nano
 
 RUN apt-get install -y \
 	autoconf \
