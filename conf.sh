@@ -14,7 +14,7 @@ SERVER_HTTP_PORT=5001
 
 
 #What is your email ? So others can contact you in case
-VHOST_EMAIL=f@rocketdata.io
+VHOST_EMAIL=a@rocketdata.io
 
 #Your FQDN the server will be available on. Only for æsthetic purposes
 VHOST_FQDN=overpass.rocketdata.io
