@@ -8,7 +8,7 @@ if [ ! -e $DBDIR/nodes.bin ]; then
 	cd $DBDIR
 
 	#Get actual last replication state
-	wget -O /dev/shm/state.txt "http://ftp.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/minute/state.txt"
+	wget -O /dev/shm/state.txt "$REPLICATE_SERVER/state.txt"
 
 	#Download the planet
 	echo "Will start downloading the planet file at $(date)"
