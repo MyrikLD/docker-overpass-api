@@ -9,6 +9,10 @@ Its actually a full install of the [overpass api server](http://overpass-api.de/
 * Area creation and updates
 * API access over apache (http://URL/api/timestamp , http://URL/api/interpreter)
 
+## After clone
+git submodule init
+git submodule update
+
 ## How to run using standard Docker commands
 You can simply build the Docker image by `docker build -t overpass_api .` and the run the docker container by `docker run -d --restart=always -v <PATH TO THE OVERPASS DB ON HOST>:/overpass_DB -p 80:80 overpass_api`.
 NOTE: After the server start up you have to wait several minutes (or hours depending on the planet size) until the DB is loaded. In order to check the status you can use `docker logs` command.
