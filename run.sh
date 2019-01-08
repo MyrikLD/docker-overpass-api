@@ -32,5 +32,5 @@ rm $DBDIR/osm3s*
 chmod uog+rw $DBDIR
 chmod uog+rw $DBDIR/*
 
-su overpass_api -c '/launch_overpass.sh'
+su overpass_api -c 'bash /launch_overpass.sh'
 

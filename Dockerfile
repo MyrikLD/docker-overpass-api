@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER Frank Villaro-Dixon <docker-overpass-api@vi-di.fr>
 
-RUN apt-get update #
+RUN apt-get update
 
 RUN apt-get install -y apache2 nano
 
@@ -50,6 +50,7 @@ RUN a2ensite vhost_apache.conf
 WORKDIR /
 
 COPY *.sh /
+RUN chmod +x *.sh
 
 ADD www /www
 
