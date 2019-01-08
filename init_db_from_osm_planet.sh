@@ -6,7 +6,7 @@ function init_planet {
 	#Download the planet
 	echo "Will start downloading the planet file at $(date)"
 	echo "From: $PLANET_FILE"
-	wget --quiet --unlink $PLANET_FILE
+	wget --quiet -c $PLANET_FILE
 	echo "Planet file downloaded at $(date)"
 }
 

@@ -4,12 +4,12 @@ MAINTAINER Frank Villaro-Dixon <docker-overpass-api@vi-di.fr>
 RUN apt-get update
 
 RUN apt-get install -y apache2 nano
+RUN apt-get install -y ca-certificates build-essential gawk texinfo pkg-config gettext automake libtool bison flex zlib1g-dev libgmp3-dev libmpfr-dev libmpc-dev git zip sshpass mc curl python expect bc telnet openssh-client tftpd-hpa libid3tag0-dev gperf libltdl-dev  autopoint
 
 RUN apt-get install -y \
 	autoconf \
 	automake1.11 \
 	expat \
-	git \
 	g++ \
 	libtool \
 	libexpat1-dev \
@@ -21,11 +21,12 @@ RUN apt-get install -y \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/drolbr/Overpass-API.git
-WORKDIR /Overpass-API
+#RUN git clone https://github.com/drolbr/Overpass-API.git
+#WORKDIR /Overpass-API
 #Checkout latest version
-RUN git checkout $(git describe --abbrev=0 --tags)
-
+#RUN git checkout $(git describe --abbrev=0 --tags)
+COPY Overpass-API /Overpass-API
+RUN chmod +x /Overpass-API/src/bin/*.sh
 #Configure
 WORKDIR /Overpass-API/src
 RUN \
@@ -59,6 +60,7 @@ RUN useradd overpass_api
 CMD ["/run.sh"]
 
 VOLUME "/overpass_DB"
+COPY rules /rules
 EXPOSE 80
 
 

@@ -24,7 +24,8 @@ $BINDIR/fetch_osc_and_apply.sh $REPLICATE_SERVER --meta=yes &
 
 #AREAS
 echo "Will run areas"
-cp -pR $OPASS_MAIN/src/rules $DBDIR/
+#cp -pR $OPASS_MAIN/src/rules $DBDIR/
+cp -pR /rules $DBDIR/
 $BINDIR/dispatcher --areas --db-dir=$DBDIR &
 
 
