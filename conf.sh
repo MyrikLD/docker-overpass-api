@@ -28,7 +28,7 @@ REPLICATE_SERVER=http://planet.osm.org/replication/minute
 
 #Where to fetch the planet file from ?
 PLANET_FILES=( \
-#"http://download.geofabrik.de/russia-latest.osm.bz2" \
+"http://download.geofabrik.de/russia-latest.osm.bz2" \
 "http://download.geofabrik.de/europe/belarus-latest.osm.bz2" \
 )
 
