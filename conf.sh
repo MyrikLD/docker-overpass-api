@@ -22,7 +22,7 @@ VHOST_FQDN=overpass.rocketdata.io
 
 
 #Which minute replication server should be used
-REPLICATE_SERVER=http://planet.osm.org/replication/minute
+REPLICATE_SERVER=https://planet.osm.org/replication/minute
 #REPLICATE_SERVER=http://ftp.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/minute/
 
 
