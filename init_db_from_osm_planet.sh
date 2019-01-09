@@ -18,14 +18,18 @@ if [ ! -e $DBDIR/nodes.bin ]; then
 	#Get actual last replication state
 	wget -O /dev/shm/state.txt "$REPLICATE_SERVER/state.txt"
 	
-	for i in "${PLANET_FILES[@]}"; do   # The quotes are necessary here
+	for i in "${PLANET_FILES[@]}"; do
 	    PLANET_FILE=$i
 	    init_planet
 	done
 
 	#init the planet
 	echo "Will init the import of the planet. Started at $(date)"
-	$BINDIR/init_osm3s.sh $DBDIR/*.osm.bz2 $DBDIR $EXECDIR --meta
+	files=(*.osm.bz2)
+	for i in "${files[@]}"; do
+	    echo "Load: $i"
+	    $BINDIR/init_osm3s.sh $DBDIR/$i $DBDIR $EXECDIR --meta
+	done
 	echo "Import finished at $(date)"
 
 	#Get 7 days of backwards history; we never know when was the planet.osm exported..
