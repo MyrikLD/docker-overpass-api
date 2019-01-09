@@ -60,7 +60,6 @@ RUN useradd overpass_api
 CMD ["/run.sh"]
 
 VOLUME "/overpass_DB"
-COPY rules /rules
 EXPOSE 80
 
 
